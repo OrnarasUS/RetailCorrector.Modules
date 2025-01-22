@@ -12,7 +12,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="RetailCorrector.API" Version="1.0.4" />
+		<PackageReference Include="RetailCorrector.API" Version="1.0.5" />
 	</ItemGroup>
 
 </Project>

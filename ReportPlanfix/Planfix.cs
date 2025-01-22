@@ -9,11 +9,11 @@ using System.Text;
 namespace ReportPlanfix;
 
 [DisplayName("PlanFix (JSON)")]
-public class Planfix : Report
+public class Planfix : IReport
 {
-    public override string Id => "PlanFix";
+    public string Id => "PlanFix";
 
-    public override Dictionary<string, string> Properties => _properties;
+    public Dictionary<string, string> Properties => _properties;
 
     private readonly Dictionary<string, string> _properties = new()
     {
@@ -31,7 +31,7 @@ public class Planfix : Report
     private string method => Properties["method"];
     private string templateBody => Properties["template"];
 
-    public override async Task Send()
+    public async Task Send()
     {
         var body = new StringBuilder(templateBody);
         body.Replace("%task%", taskId);
