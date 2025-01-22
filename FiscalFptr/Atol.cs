@@ -3,6 +3,7 @@
 
 using Atol.Drivers10.Fptr;
 using RetailCorrector.API;
+using RetailCorrector.API.Enums;
 using RetailCorrector.API.Data;
 using RetailCorrector.API.Exceptions;
 using RetailCorrector.API.Types;
@@ -10,7 +11,7 @@ using System.ComponentModel;
 
 namespace FiscalFptr;
 
-[DisplayName("Atol v.10")]
+[DisplayName("Atol v.10 (ФФД 1.2)")]
 public class Atol : IFiscal
 {
     private readonly Dictionary<int, int> DefaultValues = [];
