@@ -70,7 +70,7 @@ public class Atol : IFiscal
         Driver.report();
     }
 
-    public void Connect()
+    public void Connect(FiscalConnection data)
     {
         Driver.open();
     }
