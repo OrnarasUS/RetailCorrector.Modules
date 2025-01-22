@@ -72,6 +72,19 @@ public class Atol : IFiscal
 
     public void Connect(FiscalConnection data)
     {
+        Driver.setSingleSetting("Port", $"{(int)data.Type}");
+        var keyAddress = data.Type switch
+        {
+            FiscalConnType.COM => "ComFile",
+            FiscalConnType.USB => "UsbDevicePath",
+            FiscalConnType.TCP_IP => "IPAddress",
+            FiscalConnType.Bluetooth => "MACAddress",
+            _ => throw new NotSupportedException()
+        };
+        Driver.setSingleSetting(keyAddress, data.Address);
+        if (data.Type == FiscalConnType.TCP_IP)
+            Driver.setSingleSetting("IPPort", $"{data.Port}");
+        Driver.applySingleSettings();
         Driver.open();
     }
 
