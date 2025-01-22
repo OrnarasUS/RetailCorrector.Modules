@@ -1,4 +1,7 @@
-﻿using Atol.Drivers10.Fptr;
+﻿// Подробная документация драйвера:
+// https://integration.atol.ru/api
+
+using Atol.Drivers10.Fptr;
 using RetailCorrector.API;
 using RetailCorrector.API.Data;
 using RetailCorrector.API.Exceptions;

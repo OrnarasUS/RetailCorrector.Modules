@@ -1,4 +1,7 @@
-﻿using RetailCorrector.API.Static;
+﻿// Подробная документация API:
+// https://clck.ru/3Fsyen
+
+using RetailCorrector.API.Static;
 using RetailCorrector.API;
 using System.ComponentModel;
 using System.Text;

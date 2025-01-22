@@ -1,4 +1,7 @@
-﻿using RetailCorrector.API.Data;
+﻿// Подробнее об ошибке 420-2108:
+// https://clck.ru/3Fsyqu
+
+using RetailCorrector.API.Data;
 using RetailCorrector.API.Types;
 using RetailCorrector.API;
 using System.ComponentModel;

@@ -1,4 +1,7 @@
-﻿using RetailCorrector.API;
+﻿// Подробная документация API:
+// https://ofd.ru/razrabotchikam/cheki-i-kkt
+
+using RetailCorrector.API;
 using RetailCorrector.API.Data;
 using System.Globalization;
 using System.Text.Json.Nodes;
