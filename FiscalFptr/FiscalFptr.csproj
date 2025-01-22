@@ -1,24 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
 		<BaseOutputPath>..\bin\</BaseOutputPath>
-  </PropertyGroup>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="libs\**" />
-  </ItemGroup>
+	<PropertyGroup Condition="'$(Configuration)' == 'Release'">
+		<DebugType>none</DebugType>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="RetailCorrector.API" Version="1.0.4" />
-  </ItemGroup>
+	<ItemGroup>
+		<None Remove="libs\**" />
+	</ItemGroup>
 
-  <ItemGroup>
-    <Reference Include="Atol.Drivers10.Fptr">
-      <HintPath>libs\Atol.Drivers10.Fptr.dll</HintPath>
-    </Reference>
-  </ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="RetailCorrector.API" Version="1.0.4" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Reference Include="Atol.Drivers10.Fptr">
+			<HintPath>libs\Atol.Drivers10.Fptr.dll</HintPath>
+		</Reference>
+	</ItemGroup>
 
 </Project>
