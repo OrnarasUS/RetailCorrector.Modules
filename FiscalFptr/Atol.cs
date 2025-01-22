@@ -100,7 +100,18 @@ public class Atol : IFiscal
 
     public void OpenReceipt(Receipt receipt)
     {
-        throw new NotImplementedException();
+        Driver.setParam(1178, receipt.Correction.CreatedDate);
+        Driver.setParam(1179, receipt.Correction.DocId);
+        Driver.utilFormTlv();
+        byte[] correctionInfo = Driver.getParamByteArray(65624);
+
+        Driver.setParam(65545, receipt.Operation.CorrectionType);
+        Driver.setParam(65572, true);
+        Driver.setParam(1173, receipt.Correction.FiscalSign == " " ? 0 : 1);
+        Driver.setParam(1174, correctionInfo);
+        if(!string.IsNullOrWhiteSpace(receipt.Correction.FiscalSign)) 
+            Driver.setParam(1192, receipt.Correction.FiscalSign);
+        Driver.openReceipt();
     }
 
     public void OpenSession()
